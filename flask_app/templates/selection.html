@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+{% block navbar %}
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="/">Project Overview</a>
+        <a class="nav-item nav-link active" href="/selection">Try Application <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="/explore_data">Explore Data</a>
+        <a class="nav-item nav-link" href="/developer_info">Developer Info</a>
+      </div>
+    </div>
+{% endblock %}
+
+{% block title %}Try it for yourself!{% endblock %}
+
+{% block content %}
+  <form action ="/selection" method="POST">
+      <h2>Search a movie for suggestions:</h2>
+      <h2><input type="text" name="userMovie" placeholder="Enter Movie Title"/></h2>
+      <h2><input type="submit" value="submit"/></h2>
+  </form>
+{% endblock %}
+
+{% block msg %}
+<h1>
+  {{ message }}
+</h1>
+{% endblock %}
+
+{% block display %}
+{% for idx, row in display_df.iterrows() %}
+<h1>
+  <b>Movie: </b> {{ row['movie_title'] }} <br>
+  <b>Score: </b> {{ row['tomatometer_rating'] }} <br>
+  <b>Director(s): </b> {{ row['directors'] }} <br>
+  <b>Cast: </b> {{ row['actors'] }} <br>
+  <b>Genre(s): </b> {{ row['genres'] }} <br>
+  <br>
+</h1>
+{% endfor %}
+{% endblock %}
+
+</html>
