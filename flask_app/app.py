@@ -16,9 +16,9 @@ def selection():
     # Creates empty dataframe to be filled with movie data to be displayed
     if request.method == "POST":
             # Original dataset
-        url1 = 'gs://movie_rec_bucket/rotten_tomatoes_movies.csv'
+        url1 = 'gs://movie_bucket_rr/rotten_tomatoes_movies.csv'
             # Processed data
-        url2 = 'gs://movie_rec_bucket/RecIndices.csv'
+        url2 = 'gs://movie_bucket_rr/RecIndices.csv'
         movies, index_df = ReadAppData(url1,url2)
 
         title = request.form['userMovie']
