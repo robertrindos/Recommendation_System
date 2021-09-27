@@ -21,7 +21,7 @@ flask_app/                * folder - contains entirety of Flask app
   
 main_process/                   * folder - contains the batch processing files
   data_files/                   * folder - contains the csv files needed
-    RecIndices.csv              * created from main.py - lists index values of top 5 recommendations for every movie
+    RecIndices.csv              * created from main.py - lists index values of top 5 rec for every movie
     rotten_tomatoes_movies.csv  * original and uncleaned data from the source
   main_module.py                * module - contains functions for main.py
   main.py                       * script - processes, and uploads data to Cloud storage
