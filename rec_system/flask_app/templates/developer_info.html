@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+{% block navbar %}
+<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+  <div class="navbar-nav">
+    <a class="nav-item nav-link" href="/">
+      Project Overview
+    </a>
+    <a class="nav-item nav-link" href="/selection">
+      Try Application
+    </a>
+    <a class="nav-item nav-link" href="/explore_data">
+      Explore Data
+    </a>
+    <a class="nav-item nav-link active" href="#">
+      Developer Info
+      <span class="sr-only">
+        (current)
+      </span>
+    </a>
+  </div>
+</div>
+{% endblock %}
+
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+<div class="jumbotron">
+  <h1 class="display-4">Robert Rindos</h1>
+  <p class="lead">
+    I am a recent graduate from the University of Cincinnati with a Bachelor's degree in Business Analytics. Since the start of the quarantine, I have found two passions of mine. One being programming with data, and the other being movies. I decided it would be a perfect idea to craft this project and learn along the way. If you would like to learn more about my experience or this project you can visit my LinkedIn or GitHub down below. Please feel free to reach me through my email or phone.
+  </p>
+  <hr class="my-4">
+  <p>
+    RobertRindos98@gmail.com</br>
+    (614) 507-2978
+  </p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="https://www.linkedin.com/in/robertrindos00/" role="button">
+      LinkedIn
+    </a>
+  </p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="https://github.com/robertrindos/Recommendation_System" role="button">
+      GitHub
+    </a>
+  </p>
+</div>
+{% endblock %}
+</html>

@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+{% block navbar %}
+<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#">
+        Project Overview 
+        <span class="sr-only">
+          (current)
+        </span>
+      </a>
+      <a class="nav-item nav-link" href="/selection">
+        Try Application
+      </a>
+      <a class="nav-item nav-link" href="/explore_data">
+        Explore Data
+      </a>
+      <a class="nav-item nav-link" href="/developer_info">
+        Developer Info
+      </a>
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+
+<div class="jumbotron">
+  <h1 class="display-4">
+    Need movie recommendations? </br>
+    Rob can help.
+  </h1>
+  <p class="lead">
+    Utilizing Rotten Tomatoes data in combination with data science practices, allows this app to craft accurate movie suggestions. It finds movies with similar actors, directors, producers, genres, content ratings, and high reviews.
+    </br>
+    </br>
+    Built upon the Google Cloud Platform, the results are fast and the scalability is endless. The data pipelines within this cloud system are designed to clean, process, and manipulate data using natural language processing (NLP) practices.
+  </p>
+  <hr class="my-4">
+  <p>
+    For more info on how the recommendation system runs "under-the-hood", check out the README.txt file in the GitHub repository below.
+  </p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="/selection" role="button">
+      Try Application!
+    </a>
+  </p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="https://github.com/robertrindos/Recommendation_System" role="button">
+      GitHub Repository
+    </a>
+  </p>
+</div>
+{% endblock %}
+</html>

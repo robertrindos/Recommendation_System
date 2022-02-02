@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+{% block navbar %}
+<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+  <div class="navbar-nav">
+    <a class="nav-item nav-link" href="/">
+      Project Overview
+    </a>
+    <a class="nav-item nav-link active" href="/selection">
+      Try Application 
+      <span class="sr-only">
+        (current)
+      </span>
+    </a>
+    <a class="nav-item nav-link" href="/explore_data">
+      Explore Data
+    </a>
+    <a class="nav-item nav-link" href="/developer_info">
+      Developer Info
+    </a>
+  </div>
+</div>
+{% endblock %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+  <form action ="/selection" method="POST">
+      <h2 style="text-align:center;">
+        Search a movie for suggestions:
+      </h2>
+      <h2 style="text-align:center;">
+        <input type="text" name="userMovie" placeholder="Enter Movie Title"/>
+      </h2>
+  </form>
+{% endblock %}
+
+{% block msg %}
+<p style="text-align:center;">
+  {{ message }}
+</p>
+{% endblock %}
+
+
+
+{% block display %}
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">
+        Movie Title
+      </th>
+      <th scope="col">
+        Rotten Tomatoes Score
+      </th>
+      <th scope="col">
+        Director(s)
+      </th>
+      <th scope="col">
+        Cast
+      </th>
+      <th scope="col">
+        Genre(s)
+      </th>
+    </tr>
+  </thead>
+  {% for idx, row in display_df.iterrows() %}
+  <tbody>
+    <tr class="table-light">
+      <th scope="row">
+        {{ row['movie_title'] }}
+      </th>
+      <td>
+        {{ row['tomatometer_rating'] }}
+      </td>
+      <td>
+        {{ row['directors'] }}
+      </td>
+      <td>
+        {{ row['actors'] }}
+      </td>
+      <td>
+        {{ row['genres'] }}
+      </td>
+    </tr>
+  </tbody>
+  {% endfor %}
+</table>
+{% endblock %}
+
+</html>
